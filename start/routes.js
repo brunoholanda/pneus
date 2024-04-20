@@ -23,7 +23,25 @@ Route.group(() => {
   Route.get('/veiculos/:id', 'VeiculoController.show');
   Route.patch('/veiculos/:id', 'VeiculoController.update');
   Route.delete('/veiculos/:id', 'VeiculoController.destroy');
-
 }).prefix('api');
+
+
+// Rotas para CaminhoesMarca
+Route.group(() => {
+  Route.get('caminhoes_marca', 'CaminhaoMarcaController.index')
+  Route.post('caminhoes_marca', 'CaminhaoMarcaController.store')
+  Route.get('caminhoes_marca/:id', 'CaminhaoMarcaController.show')
+  Route.put('caminhoes_marca/:id', 'CaminhaoMarcaController.update')
+}).prefix('api')
+
+// Rotas para PneusMarca
+Route.group(() => {
+  Route.get('pneus_marcas', 'PneusMarcaController.index')
+  Route.post('pneus_marcas', 'PneusMarcaController.store')
+  Route.get('pneus_marcas/:id', 'PneusMarcaController.show')
+  Route.put('pneus_marcas/:id', 'PneusMarcaController.update')
+}).prefix('api')
+
+
 
 Route.on('/').render('welcome')
